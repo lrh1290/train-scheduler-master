@@ -1,0 +1,26 @@
+body {
+    background-image: url('img.jpg');
+    background-size: cover;
+    font-family: 'Ruslan Display', cursive;
+}
+
+.jumbotron {
+    background-color: #00000044;
+}
+
+.white {
+    color: white;
+}
+
+th {
+    font-weight: normal;
+}
+
+.table-heading {
+    font-weight: bold;
+}
+
+.container {
+    max-width: 1000px;
+    opacity: 0.9;
+}

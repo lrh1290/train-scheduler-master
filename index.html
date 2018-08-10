@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Train Schedule</title>
+
+  <!-- Bootstrap 3 -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
+    crossorigin="anonymous">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+    crossorigin="anonymous">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  <!-- MomentJS -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Ruslan+Display" rel="stylesheet">
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid text-center">
+    <div class="container">
+      <h1 style="color: white;">Train Schedule</h1>
+    </div>
+  </div>
+  <div class="container">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h5>
+          Current Train Schedule
+        </h5>
+      </div>
+      <div class="panel-body clearfix">
+        <!-- TABLE START -->
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th class="table-heading" scope="col">Conductor
+              </th>
+              <th class="table-heading" scope="col">Destination
+              </th>
+              <th class="table-heading" scope="col">Frequency
+              </th>
+              <th class="table-heading" scope="col">Next
+              </th>
+              <th class="table-heading" scope="col">Minutes
+              </th>
+              <th class="table-heading" scope="col">
+                <!-- FILL SPOT -->
+              </th>
+            </tr>
+          </thead>
+          <tbody id="trains-go-here">
+          </tbody>
+        </table>
+        <!-- TABLE END -->
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- FORM START -->
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h5>Add Train</h5>
+      </div>
+      <div class="panel-body">
+        <form>
+
+          <div class="form-group">
+            <label for="train-name">Conductor</label>
+            <input type="text" class="form-control" id="train-name-input" placeholder="Conductor">
+          </div>
+
+          <div class="form-group">
+            <label for="destination">Destination</label>
+            <input type="text" class="form-control" id="destination-input" placeholder="Destination">
+          </div>
+
+          <div class="form-group">
+            <label for="first-train-time">First Train Time</label>
+            <input type="text" class="form-control" id="time-input" placeholder="ex: 08:00">
+          </div>
+
+          <div class="form-group">
+            <label for="frequency">Frequency In Minutes</label>
+            <input type="text" class="form-control" id="frequency-input" placeholder="ex: 30">
+          </div>
+
+          <button id="add-train" class="btn btn-primary">Add Train</button>
+        </form>
+
+      </div>
+    </div>
+    <br>
+  </div>
+  </div>
+  </div>
+
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
+  <script>
+    var config = {
+      apiKey: "AIzaSyDr0jGN_RsDingZ2z_-86u1Tw11Guba9cc",
+      authDomain: "myproject-95e5c.firebaseio.com",
+      databaseURL: "https://myproject-95e5c.firebaseio.com/",
+      projectId: "myproject-95e5c",
+      storageBucket: "myproject-95e5c.firebaseio.com",
+      messagingSenderId: "8754424615"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <!-- index.js -->
+  <script src="index.js" type="text/javascript"></script>
+
+</body>
+
+</html>
